@@ -1,12 +1,5 @@
-node {
-    stages {
-        stage('Preparation') {
-            git 'https://github.com/arpierson2/cs6261project4.git'
-        }
-    }
-}
-
 pipeline {
+    tools {nodejs "NodeJS"}
     agent any
     stages {
         stage('build') {
