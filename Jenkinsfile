@@ -3,12 +3,14 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'npm install'
+                //sh 'npm install'
+                echo "Not yet implemented"
             }
         }
         stage('test') {
             steps {
-                sh 'ng test'
+                //sh 'ng test'
+                echo "Not yet implemented"
             }
         }
         stage('e2e') {
