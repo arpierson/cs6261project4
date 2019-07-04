@@ -86,7 +86,8 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "progress": false
           }
         },
         "lint": {
@@ -115,6 +116,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "cs6261project4"
 }
