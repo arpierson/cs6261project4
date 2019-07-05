@@ -11,4 +11,4 @@ RUN npm install -g http-server
 
 RUN chmod +x build.sh
 
-CMD build.sh
+CMD ["build.sh"]
