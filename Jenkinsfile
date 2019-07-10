@@ -11,9 +11,12 @@ pipeline {
                 sh 'ng test'
             }
         }
-        stage('e2e') {
+        stage('e2e tests') {
             steps {
-                echo "Not yet implemented"
+                sh 'docker build -t testimage'
+                sh 'docker run -d --name testcontainer -v $(WORKSPACE):/calculator/data -p 127.0.0.1:4200:4200 testimage'
+                sh './node_modules/protractor/bin/webdriver-manager update'
+                sh 'ng e2e --devServerTarget='
             }
         }
         stage('deploy') {
