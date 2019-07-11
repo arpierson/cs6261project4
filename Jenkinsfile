@@ -27,7 +27,7 @@ pipeline {
     }
     post { 
         always { 
-            sh 'docker rm testcontainer || true'
+            sh 'docker rm testcontainer --force || true'
         }
     }
 }
