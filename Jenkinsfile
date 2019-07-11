@@ -17,13 +17,17 @@ pipeline {
                 sh 'docker run -d --name testcontainer -v $(WORKSPACE):/calculator/data -p 127.0.0.1:4200:4200 testimage'
                 sh './node_modules/protractor/bin/webdriver-manager update'
                 sh 'ng e2e --devServerTarget='
-                sh 'docker rm testcontainer || true'
             }
         }
         stage('deploy') {
             steps {
                 echo "Not yet implemented"
             }
+        }
+    }
+    post { 
+        always { 
+            sh 'docker rm testcontainer || true'
         }
     }
 }
