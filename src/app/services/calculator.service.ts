@@ -24,4 +24,8 @@ export class CalculatorService {
   getTolerance(): number {
     return this.resistorValues[4];
   }
+
+  getResistorValues(): number[] {
+    return this.resistorValues;
+  }
 }
