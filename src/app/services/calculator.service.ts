@@ -5,19 +5,23 @@ import { Injectable } from '@angular/core';
 })
 export class CalculatorService {
 
-  private resistorValues: { [key: string]: number };
+  private resistorValues:  number[];
 
   constructor() {
-    this.resistorValues = {"figure1": 0, "figure2": 0, "figure3": 0, "multiplier": 1, "tolerance": 1};
+    this.resistorValues = [0, 0, 0, 1, 1];
    }
 
   calculateResistance(): number {
-    var figuresConcat = '' + this.resistorValues[0].valueOf() + this.resistorValues[1].valueOf() + this.resistorValues[2].valueOf(); 
+    var figuresConcat = '' + this.resistorValues[0] + this.resistorValues[1] + this.resistorValues[2]; 
     var figures = +figuresConcat;
-    return figures * this.resistorValues[3].valueOf();
+    return figures * this.resistorValues[3];
+  }
+
+  replaceValue(index: number, newValue: number) {
+    this.resistorValues[index] = newValue;
   }
 
   getTolerance(): number {
-    return this.resistorValues[4].valueOf();
+    return this.resistorValues[4];
   }
 }
