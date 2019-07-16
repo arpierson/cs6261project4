@@ -9,7 +9,7 @@ import {CalculatorService} from '../services/calculator.service';
 })
 export class CalculatorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private calculatorService: CalculatorService) { }
 
   ngOnInit() {
   }
