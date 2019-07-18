@@ -1,38 +1,40 @@
-<h1><strong>Resistance: {{ resistanceValue }} +/- {{ toleranceValue }}%</strong></h1>
-<br>
-<h3>Select the color bands below:</h3>
-<div id="digitsColorBands" class="colors">
-    <form>
-        <label>Digits</label>
-        <br>
-        <select name="digits1" [(ngModel)]="digits1" ngValue="digits1" (change)="replaceDigitValue(0, convertColorToDigitValue(digits1))">
-            <option *ngFor="let color of digitsColors">{{ color }}</option>
-        </select>
+<div id="wrapper">
+    <h2><strong>Resistance: {{ resistanceValue }} +/- {{ toleranceValue }}%</strong></h2>
+    <br>
+    <h3>Select the color bands below:</h3>
+    <div id="digitsColorBands" class="colors">
+        <form>
+            <label>Digits</label>
+            <br>
+            <select name="digits1" [(ngModel)]="digits1" ngValue="digits1" (change)="replaceDigitValue(0, convertColorToDigitValue(digits1))">
+                <option *ngFor="let color of digitsColors">{{ color }}</option>
+            </select>
 
-        <select name="digits2" [(ngModel)]="digits2" ngValue="digits2" (change)="replaceDigitValue(1, convertColorToDigitValue(digits2))">
-            <option *ngFor="let color of digitsColors">{{ color }}</option>
-        </select>
+            <select name="digits2" [(ngModel)]="digits2" ngValue="digits2" (change)="replaceDigitValue(1, convertColorToDigitValue(digits2))">
+                <option *ngFor="let color of digitsColors">{{ color }}</option>
+            </select>
 
-        <select name="digits3" [(ngModel)]="digits3" ngValue="digits3" (change)="replaceDigitValue(2, convertColorToDigitValue(digits3))">
-            <option *ngFor="let color of digitsColors">{{ color }}</option>
-        </select>
-    </form>
-</div>
-<div id="multiplierColorBand" class="colors">
-    <form>
-        <label>Multiplier</label>
-        <br>
-        <select name="multiplier" [(ngModel)]="multiplier" ngValue="multiplier" (change)="replaceMultiplierValue(convertColorToMultiplierValue(multiplier))">
-            <option *ngFor="let color of multiplierColors"> {{ color }}</option>
-        </select>
-    </form>
-</div>
-<div id="toleranceColorBand" class="colors">
-    <form>
-        <label>Tolerance</label>
-        <br>
-        <select name="tolerance" [(ngModel)]="tolerance" ngValue="tolerance" (change)="replaceToleranceValue(convertColorToToleranceValue(tolerance))">
-            <option *ngFor="let color of toleranceColors"> {{ color }}</option>
-        </select>
-    </form>
+            <select name="digits3" [(ngModel)]="digits3" ngValue="digits3" (change)="replaceDigitValue(2, convertColorToDigitValue(digits3))">
+                <option *ngFor="let color of digitsColors">{{ color }}</option>
+            </select>
+        </form>
+    </div>
+    <div id="multiplierColorBand" class="colors">
+        <form>
+            <label>Multiplier</label>
+            <br>
+            <select name="multiplier" [(ngModel)]="multiplier" ngValue="multiplier" (change)="replaceMultiplierValue(convertColorToMultiplierValue(multiplier))">
+                <option *ngFor="let color of multiplierColors"> {{ color }}</option>
+            </select>
+        </form>
+    </div>
+    <div id="toleranceColorBand" class="colors">
+        <form>
+            <label>Tolerance</label>
+            <br>
+            <select name="tolerance" [(ngModel)]="tolerance" ngValue="tolerance" (change)="replaceToleranceValue(convertColorToToleranceValue(tolerance))">
+                <option *ngFor="let color of toleranceColors"> {{ color }}</option>
+            </select>
+        </form>
+    </div>
 </div>
