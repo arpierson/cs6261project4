@@ -160,10 +160,8 @@ convertColorToToleranceValue(color: string): number {
     }
   }
 }
-
   ngOnInit() {
     this.setResistance();
     this.setTolerance();
   }
-
 }
