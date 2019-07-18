@@ -11,19 +11,37 @@ export class CalculatorComponent implements OnInit {
 
   public resistanceValue: number;
   public toleranceValue: number;
+  public readonly digitsColors: string[];
+  public readonly multiplierColors: string[];
+  public readonly toleranceColors: string[];
 
-  constructor(private calculatorService: CalculatorService) { }
+  constructor(private calculatorService: CalculatorService) {
+    this.digitsColors = ['black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'grey', 'white'];
+    this.multiplierColors = ['black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'grey', 'white', 'gold', 'silver'];
+    this.toleranceColors = ['brown', 'red', 'green', 'blue', 'violet', 'grey', 'gold', 'silver', 'none'];
+   }
 
   setResistance() {
     this.resistanceValue = this.calculatorService.calculateResistance();
   }
 
   setTolerance() {
-    this.resistanceValue = this.calculatorService.getTolerance();
+    this.toleranceValue = this.calculatorService.getTolerance();
   }
 
-  replaceValue(index: number, value: number) {
+  replaceDigitValue(index: number, value: number) {
     this.calculatorService.replaceValue(index, value);
+    this.setResistance();
+  }
+
+  replaceMultiplierValue(value: number) {
+    this.calculatorService.replaceValue(3, value);
+    this.setResistance();
+  }
+
+  replaceToleranceValue(value: number) {
+    this.calculatorService.replaceValue(4, value);
+    this.setTolerance();
   }
 
   convertColorToDigitValue(color: string): number {
@@ -108,7 +126,7 @@ export class CalculatorComponent implements OnInit {
   }
  }
 
-convertcolorToTolerance(color: string): number {
+convertColorToToleranceValue(color: string): number {
   switch (color) {
     case 'brown': {
       return 1;
@@ -144,6 +162,8 @@ convertcolorToTolerance(color: string): number {
 }
 
   ngOnInit() {
+    this.setResistance();
+    this.setTolerance();
   }
 
 }
