@@ -9,6 +9,6 @@ COPY . /calculator
 RUN npm install -g @angular/cli@7.3.5
 RUN npm install -g http-server
 
-#RUN chmod +x build.sh
+RUN ["chmod", "+x", "build.sh"]
 
-CMD ["chmod", "+x", "./build.sh"]
+CMD ["./build.sh"]
