@@ -2,4 +2,4 @@
 
 ng build --prod
 
-http-server -p 4200 -c-1 dist/cs6261project4
+http-server dist/cs6261project4 -p 4200 -c-1 
