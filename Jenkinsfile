@@ -19,9 +19,6 @@ pipeline {
                 
                 // Added sleep command to give http-server time to full start in the Docker container before invoking e2e tests
                 sh 'sleep 120s'
-                // DEBUG
-                sh 'docker ps'
-                sh 'docker logs -f testcontainer'
                 sh 'ng e2e --devServerTarget='
             }
         }
