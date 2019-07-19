@@ -45,4 +45,27 @@ describe('CalculatorComponent', () => {
     component.setTolerance();
     expect(component.toleranceValue).toEqual(1);
   });
+
+  it('should replace important digit color band values', () => {
+    component.replaceDigitValue(0, 9);
+    component.replaceDigitValue(1, 9);
+    component.replaceDigitValue(2, 9);
+    component.setResistance();
+    expect(component.resistanceValue).toEqual(999);
+  });
+
+  it('should replace multiplier color band value', () => {
+    component.replaceMultiplierValue(100);
+    component.replaceDigitValue(0, 1);
+    component.replaceDigitValue(1, 1);
+    component.replaceDigitValue(2, 1);
+    component.setResistance();
+    expect(component.resistanceValue).toEqual(11100);
+  });
+
+  it('should replace tolerance color band value', () => {
+    component.replaceToleranceValue(5);
+    component.setTolerance();
+    expect(component.toleranceValue).toEqual(5);
+  });
 });
