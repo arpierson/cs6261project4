@@ -21,6 +21,7 @@ pipeline {
                 sh 'sleep 120s'
                 // DEBUG
                 sh 'docker ps'
+                sh 'docker logs -f testcontainer'
                 sh 'ng e2e --devServerTarget='
             }
         }
