@@ -14,6 +14,11 @@ export class CalculatorComponent implements OnInit {
   public readonly digitsColors: string[];
   public readonly multiplierColors: string[];
   public readonly toleranceColors: string[];
+  digits1: any;
+  digits2: any;
+  digits3: any;
+  muliplier: any;
+  tolerance: any;
 
   constructor(private calculatorService: CalculatorService) {
     this.digitsColors = ['black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'grey', 'white'];
