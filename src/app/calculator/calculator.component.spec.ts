@@ -68,4 +68,16 @@ describe('CalculatorComponent', () => {
     component.setTolerance();
     expect(component.toleranceValue).toEqual(5);
   });
+
+  it('should convert digit color name strings to corresponding numeric value', () => {
+    expect(component.convertColorToDigitValue('green')).toEqual(5);
+  });
+
+  it('should convert multiplier color name strings to corresponding numeric value', () => {
+    expect(component.convertColorToMultiplierValue('green')).toEqual(100000);
+  });
+
+  it('should convert tolerance color name strings to corresponding numeric value', () => {
+    expect(component.convertColorToToleranceValue('green')).toEqual(.5);
+  });
 });

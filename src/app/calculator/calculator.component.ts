@@ -14,6 +14,8 @@ export class CalculatorComponent implements OnInit {
   public readonly digitsColors: string[];
   public readonly multiplierColors: string[];
   public readonly toleranceColors: string[];
+
+  // Adding in calculator.component.html properties for ng build to build properly w/o errors
   digits1: any;
   digits2: any;
   digits3: any;
