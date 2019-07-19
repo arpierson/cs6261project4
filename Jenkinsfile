@@ -18,7 +18,7 @@ pipeline {
                 sh './node_modules/protractor/bin/webdriver-manager update'
                 
                 // Added sleep command to give http-server time to full start in the Docker container before invoking e2e tests
-                sh 'sleep 120s'
+                sh 'sleep 180s'
                 sh 'ng e2e --devServerTarget='
             }
         }
