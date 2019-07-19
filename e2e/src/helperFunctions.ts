@@ -10,8 +10,12 @@ var resistancePage = function() {
         return element(by.name(name));
     };
 
-    this.getText = function(name: string) {
-        return this.elementByName(name).getText();
+    this.elementById = function(name: string) {
+        return element(by.id(name));
+    };
+
+    this.getText = function(idName: string) {
+        return this.elementById(idName).getText();
     };
 
     this.selectOption = function(selectName: string, option: string) {
