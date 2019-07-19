@@ -17,7 +17,7 @@ export class CalculatorComponent implements OnInit {
   digits1: any;
   digits2: any;
   digits3: any;
-  muliplier: any;
+  multiplier: any;
   tolerance: any;
 
   constructor(private calculatorService: CalculatorService) {
