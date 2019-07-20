@@ -21,6 +21,10 @@ var resistancePage = function() {
     this.selectOption = function(selectName: string, option: string) {
         return this.elementByName(selectName).element(by.cssContainingText('option', option)).click();
     };
+
+    this.getOptionValue = function(selectName: string) {
+        return this.elementByName(selectName).element(by.css('option:checked')).getText();
+    };
 };
 
 module.exports = new resistancePage();

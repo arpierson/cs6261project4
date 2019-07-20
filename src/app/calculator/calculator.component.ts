@@ -16,11 +16,11 @@ export class CalculatorComponent implements OnInit {
   public readonly toleranceColors: string[];
 
   // Adding in calculator.component.html properties for ng build to build properly w/o errors
-  digits1: any;
-  digits2: any;
-  digits3: any;
-  multiplier: any;
-  tolerance: any;
+  digits1 = 'black';
+  digits2 = 'black';
+  digits3 = 'black';
+  multiplier = 'black';
+  tolerance = 'brown';
 
   constructor(private calculatorService: CalculatorService) {
     this.digitsColors = ['black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'grey', 'white'];
