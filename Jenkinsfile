@@ -25,7 +25,9 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                echo "Not yet implemented"
+                sh 'docker build -t deploymentimage .'
+                sh 'docker run -d --name deploymentimage -v "$WORKSPACE":/calculator -p 127.0.0.1:5000:5000 deploymentimage'
+                sh './node_modules/protractor/bin/webdriver-manager update'
             }
         }
     }
