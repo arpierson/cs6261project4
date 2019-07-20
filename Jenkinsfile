@@ -33,7 +33,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                sh 'docker stop deploymentcontainer'
+                sh 'docker stop deploymentcontainer || true'
                 sh 'docker image rm deploymentimage --force || true'
                 sh 'docker rm deploymentcontainer --force || true'
                 sh 'docker build -t deploymentimage .'
