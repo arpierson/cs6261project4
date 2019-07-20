@@ -8,6 +8,7 @@ pipeline {
         }
         stage('test') {
             steps {
+                echo "commented out for time"
                 //sh 'ng test'
             }
         }
