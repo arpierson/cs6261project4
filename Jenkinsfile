@@ -34,6 +34,13 @@ pipeline {
                 sh 'docker build -t deploymentimage .'
                 sh 'docker run -d --name deploymentcontainer -v "$WORKSPACE":/calculator -p 127.0.0.1:5000:4200 deploymentimage'
                 sh './node_modules/protractor/bin/webdriver-manager update'
+                waitUntil {
+                    script {
+                        until $(curl --output /dev/null --silent --head --fail http://127.0.0.1:5000); do
+                            echo "Web server not fully started yet"
+                        done
+                    }
+                }
             }
         }
     }
