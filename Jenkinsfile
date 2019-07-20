@@ -25,8 +25,10 @@ pipeline {
         }
         stage('deploy') {
             steps {
+                sh 'docker image rm deploymentimage --force || true'
+                sh 'docker rm deploymentcontainer --force || true'
                 sh 'docker build -t deploymentimage .'
-                sh 'docker run -d --name deploymentimage -v "$WORKSPACE":/calculator -p 127.0.0.1:5000:5000 deploymentimage'
+                sh 'docker run -d --name deploymentcontainer -v "$WORKSPACE":/calculator -p 127.0.0.1:5000:5000 deploymentimage'
                 sh './node_modules/protractor/bin/webdriver-manager update'
             }
         }
