@@ -157,7 +157,7 @@ convertColorToToleranceValue(color: string): number {
       return 5;
     }
     case 'silver': {
-      return .10;
+      return 10;
     }
     case 'none': {
       return 20;
