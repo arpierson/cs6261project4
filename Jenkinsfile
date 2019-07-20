@@ -8,7 +8,7 @@ pipeline {
         }
         stage('test') {
             steps {
-                sh 'ng test'
+                //sh 'ng test'
             }
         }
         stage('e2e tests') {
