@@ -8,8 +8,7 @@ pipeline {
         }
         stage('test') {
             steps {
-                echo "commented out for time"
-                //sh 'ng test'
+                sh 'ng test'
             }
         }
         stage('e2e tests') {
@@ -27,11 +26,6 @@ pipeline {
                     }
                   }
               }
-                /**
-                // Added sleep command to give http-server time to full start in the Docker container before invoking e2e tests
-                // Increase this time if you receive 'connection was reset' error from Firefox in Protractor tests to give your computer more time to fire up http-server
-                sh 'sleep 120s'
-                **/
                 sh 'ng e2e --devServerTarget='
             }
         }
