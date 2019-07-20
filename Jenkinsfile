@@ -35,12 +35,14 @@ pipeline {
                 sh 'docker build -t deploymentimage .'
                 sh 'docker run -d --name deploymentcontainer -v "$WORKSPACE":/calculator -p 127.0.0.1:5000:4200 deploymentimage'
                 sh './node_modules/protractor/bin/webdriver-manager update'
-                 waitUntil {
-                  try {         
-                      sh "curl -s --head  --request GET  127.0.0.1:5000 | grep '200'"
-                      return true
-                  } catch (Exception e) {
+                waitUntil {
+                  script {
+                      try {         
+                        sh "curl -s --head  --request GET  127.0.0.1:5000 | grep '200'"
+                        return true
+                    } catch (Exception e) {
                         return false
+                  }
                   }
               }
             }
