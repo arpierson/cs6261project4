@@ -1,4 +1,4 @@
-FROM node:12.6.0
+FROM node:8
 
 LABEL "maintainer"="apierso2@my.westga.edu"
 
